@@ -1,0 +1,13 @@
+name = "Untitled Duck Mod (Fabric)"
+filename = "untitledduckmod-0.7.0-fabric-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fba7283d464a9d24a9929d3a98f8c55fa2255d9a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5577494
+project-id = 451766

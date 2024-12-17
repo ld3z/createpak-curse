@@ -1,0 +1,13 @@
+name = "Liquid Burner"
+filename = "liquidburner-fabric-1.20.1-0.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8dfb10a308965203100600e67e11320797f77d0c"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5254573
+project-id = 711034

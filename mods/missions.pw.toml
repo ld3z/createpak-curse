@@ -1,0 +1,13 @@
+name = "Create: Missions"
+filename = "missions-fabric-0.4.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "b63c061449219715d26873a461e4545307e4e92a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5896736
+project-id = 911382

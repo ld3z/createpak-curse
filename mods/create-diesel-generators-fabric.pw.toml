@@ -1,0 +1,13 @@
+name = "Create: Diesel Generators [Fabric]"
+filename = "createdieselgenerators-2.1.4.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "eee0e19045f391d6d785d4322b112336b69eb106"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5335378
+project-id = 906568

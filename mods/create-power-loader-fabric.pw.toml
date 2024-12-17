@@ -1,0 +1,13 @@
+name = "Create: Power Loader (Fabric)"
+filename = "create_power_loader-1.5.3-mc1.20.1-fabric.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "773fa689a5d1027959bb7900585900dbb75cf0dc"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5375773
+project-id = 976304

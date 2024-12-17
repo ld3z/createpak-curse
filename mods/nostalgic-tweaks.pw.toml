@@ -1,0 +1,13 @@
+name = "Nostalgic Tweaks (Fabric/NeoForge)"
+filename = "NostalgicTweaks-mc1.20.1-Fabric-2.0.0-beta.903.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "05b0bcb3652bc723a5686005d983bcac79257447"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5602577
+project-id = 592465

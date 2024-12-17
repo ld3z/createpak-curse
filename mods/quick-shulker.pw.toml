@@ -1,0 +1,13 @@
+name = "Quick Shulker"
+filename = "quickshulker-1.4.0-1.20.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "10670458f2b106ce97a58bc287816ea184924741"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4592296
+project-id = 362669

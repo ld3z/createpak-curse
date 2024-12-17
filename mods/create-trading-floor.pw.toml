@@ -1,0 +1,13 @@
+name = "Create: Trading Floor"
+filename = "trading_floor-1.1.4+fabric-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e597d8d6520c447c2b69078d821855db450bf20e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5962775
+project-id = 1102591

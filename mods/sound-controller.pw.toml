@@ -1,0 +1,13 @@
+name = "Sound Controller"
+filename = "soundcontroller-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "80c14f105a011ddaf66573fea8b487ae8e1902ee"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4738606
+project-id = 888709
