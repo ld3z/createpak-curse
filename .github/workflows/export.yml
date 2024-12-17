@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main  # Trigger when there is a push to the main branch
-  release:
-    types:
-      - created  # Trigger when a new release is created
 
 jobs:
   build:
@@ -32,8 +29,12 @@ jobs:
           # The modpack is located at the root of the repository, no need to change the directory
           packwiz curseforge export
 
-      - name: Upload ZIP to GitHub Release
-        if: github.event_name == 'release' && github.event.action == 'created'
-        uses: ncipollo/release-action@v1
+      - name: List files after export
+        run: ls -alh  # Check if the ZIP file exists
+
+      - name: Create GitHub Release and Upload ZIP
+        uses: softprops/action-gh-release@v1
         with:
-          artifacts: createpak-1.0.0.zip
+          files: ${{ github.workspace }}/*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
