@@ -1,0 +1,39 @@
+name: Packwiz Export and Release
+
+on:
+  push:
+    branches:
+      - main  # Trigger when there is a push to the main branch
+  release:
+    types:
+      - created  # Trigger when a new release is created
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # You can change to windows-latest if needed
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Go (1.19+)
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.19'  # Ensure you use Go 1.19 or newer
+
+      - name: Install Packwiz via Go
+        run: |
+          go install github.com/packwiz/packwiz@latest
+          # Ensure that the packwiz binary is in your PATH
+          echo "$GOPATH/bin" >> $GITHUB_PATH
+
+      - name: Run Packwiz export
+        run: |
+          # The modpack is located at the root of the repository, no need to change the directory
+          packwiz curseforge export
+
+      - name: Upload ZIP to GitHub Release
+        if: github.event_name == 'release' && github.event.action == 'created'
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: createpak-1.0.0.zip
