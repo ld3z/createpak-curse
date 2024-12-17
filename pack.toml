@@ -1,0 +1,13 @@
+name = "createpak"
+author = "ldez"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "fb66b89b32d6c4bd464f85a0f779e7a961d7dc45a6cea56922ee56d7afde3c8d"
+
+[versions]
+fabric = "0.16.9"
+minecraft = "1.20.1"

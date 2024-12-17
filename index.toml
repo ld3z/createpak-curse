@@ -1,0 +1,61 @@
+hash-format = "sha256"
+
+[[files]]
+file = "mods/architectury-api.pw.toml"
+hash = "e12dce3e543168379a2856c66064ee2001e6420a9dfc6163f37b78e518947456"
+metafile = true
+
+[[files]]
+file = "mods/betterf3.pw.toml"
+hash = "a1e024094c28068c99a6da1c5867cbd4e66a315718039659bfa533a138762d9e"
+metafile = true
+
+[[files]]
+file = "mods/cloth-config.pw.toml"
+hash = "41a3dc271859b118417946d2fdb2408523563b2f4f49048073672a342fb1aebf"
+metafile = true
+
+[[files]]
+file = "mods/continuity.pw.toml"
+hash = "ca80c5f6b0faca95bbc06192a3da36446ff396b5e6e0304f6779269b60bbdd9d"
+metafile = true
+
+[[files]]
+file = "mods/create-fabric.pw.toml"
+hash = "7d227ef90b1918ceb348ade235a5d17c7894acbf387575e96c08920a5bad1bbb"
+metafile = true
+
+[[files]]
+file = "mods/create-goggles.pw.toml"
+hash = "f10611e22b81f4eae5e9e012fecffe21c694cde7417b43a93ae3381508020f44"
+metafile = true
+
+[[files]]
+file = "mods/fabric-api.pw.toml"
+hash = "ebd92e07834dae22ebb7340a1112ac20d79869ec12ef5107938f564dee2661d2"
+metafile = true
+
+[[files]]
+file = "mods/immediatelyfast.pw.toml"
+hash = "2e441b5e21e8db1cd9102216ce4b8d1a25d77a026182e00f6324aadda402f715"
+metafile = true
+
+[[files]]
+file = "mods/numismatics.pw.toml"
+hash = "928f468ee559de65f53d3758c1cd3f98ef2e0a7a9aa360355ef5114f565606cf"
+metafile = true
+
+[[files]]
+file = "mods/replanter.pw.toml"
+hash = "b1ea7593eea9b2a9f8b7d70bb760f076142b34d4cc5801de3a16fc74d0c8617c"
+metafile = true
+
+[[files]]
+file = "mods/trinkets.pw.toml"
+hash = "ffdb79f5bc29f990e5889f5d159a043c7046b8cd8d79f17f54b44d7ccc2b242a"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-minimap.pw.toml"
+hash = "12262a6fc189ddd24d3231a59054e07c3cd12dcba364055244f41e8331f139fb"
+metafile = true
