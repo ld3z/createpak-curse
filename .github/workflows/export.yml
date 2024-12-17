@@ -32,6 +32,18 @@ jobs:
       - name: List files after export
         run: ls -alh  # Check if the ZIP file exists
 
+      - name: Create a new tag
+        id: create_tag
+        run: |
+          # Get the latest commit hash and create a tag based on it
+          COMMIT_HASH=$(git rev-parse --short HEAD)
+          TAG_NAME="v${COMMIT_HASH}"
+          # Create the tag
+          git tag $TAG_NAME
+          git push origin $TAG_NAME
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Create GitHub Release and Upload ZIP
         uses: softprops/action-gh-release@v1
         with:
