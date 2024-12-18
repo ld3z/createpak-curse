@@ -42,6 +42,10 @@ jobs:
           wget -O /home/runner/.cache/packwiz/cache/import/entityculling-fabric-1.7.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/entityculling/files/5968678
           wget -O /home/runner/.cache/packwiz/cache/import/notenoughanimations-fabric-1.8.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/not-enough-animations/files/5977993
 
+      - name: Rename My_Totem_Doll Jar File
+        run: |
+          mv /home/runner/.cache/packwiz/cache/import/My_Totem_Doll-1.0.1+1.20.1.jar /home/runner/.cache/packwiz/cache/import/My\ Totem\ Doll-1.0.1+1.20.1.jar
+
       - name: Debug Packwiz Cache
         run: |
           echo "Packwiz Cache Files:"
