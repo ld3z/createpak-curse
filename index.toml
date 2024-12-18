@@ -71,11 +71,6 @@ hash = "fd9016f568649ac65a7f19bcf371fa3984da23866c1726f042eab2ecbdc470ef"
 metafile = true
 
 [[files]]
-file = "mods/create-cobblestone.pw.toml"
-hash = "10b9ba34fde9c003f6f8eeaaf15acb3de6741415aa80d471173cfd8661bf83cb"
-metafile = true
-
-[[files]]
 file = "mods/create-connected-fabric-experimental.pw.toml"
 hash = "4dcf7d71c0a539f19ed9cfdd568f72fddc3bde8419f2835cf0c210881ecdd6d1"
 metafile = true
@@ -83,11 +78,6 @@ metafile = true
 [[files]]
 file = "mods/create-deco.pw.toml"
 hash = "0bbb0d5c211ddf6fd76fd602167b1f012dbfe56e72c5f2568ec1089cd930ece0"
-metafile = true
-
-[[files]]
-file = "mods/create-design-n-decor.pw.toml"
-hash = "e265b095bf3db19e168de18032e9e71a013c4c146e2a3e7791d4e9badaf7bd9e"
 metafile = true
 
 [[files]]
