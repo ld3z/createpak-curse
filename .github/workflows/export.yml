@@ -24,10 +24,15 @@ jobs:
           # Ensure that the packwiz binary is in your PATH
           echo "$GOPATH/bin" >> $GITHUB_PATH
 
-      - name: Run Packwiz export
+      - name: Run Packwiz export (curseforge)
         run: |
           # The modpack is located at the root of the repository, no need to change the directory
           packwiz curseforge export
+
+      - name: Run Packwiz export (modrinth)
+        run: |
+          # The modpack is located at the root of the repository, no need to change the directory
+          packwiz modrinth export
 
       - name: List files after export
         run: ls -alh  # Check if the ZIP file exists
@@ -41,10 +46,12 @@ jobs:
           git push origin $TAG_NAME
           echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV  # Store the tag in the environment for later steps
 
-      - name: Create GitHub Release and Upload ZIP
+      - name: Create GitHub Release and Upload Files
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ github.workspace }}/*.zip
+          files: |
+            ${{ github.workspace }}/*.zip
+            ${{ github.workspace }}/*.mrpack
           tag_name: ${{ env.TAG_NAME }}  # Use the tag name from the environment variable
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
