@@ -3,11 +3,11 @@ filename = "Steam_Rails-1.6.9+fabric-mc1.20.1.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "d1a6435e683d3cbb70044c78e0cfd38b5076f8fd"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/ZzjhlDgM/versions/VFhdqLko/Steam_Rails-1.6.9%2Bfabric-mc1.20.1.jar"
+hash-format = "sha512"
+hash = "048a0cad7fd4f9eb7516ee557a8d427f4e65b7e7020a24f60fe171f5b84c53dc0a67b603fc4a7d063f15df05ae5e35fc4ff64ec1b8996ca6fc42833fc2f5d55b"
 
 [update]
-[update.curseforge]
-file-id = 5982784
-project-id = 688231
+[update.modrinth]
+mod-id = "ZzjhlDgM"
+version = "VFhdqLko"

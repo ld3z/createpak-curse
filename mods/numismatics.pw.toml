@@ -3,11 +3,11 @@ filename = "CreateNumismatics-1.0.10+fabric-mc1.20.1.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "fe8a790c0eb06eb958c4ec102db8667447b6e711"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/Jdbbtt0i/versions/TYxoB2MX/CreateNumismatics-1.0.10%2Bfabric-mc1.20.1.jar"
+hash-format = "sha512"
+hash = "b5dc8ff2b72bf3ee65e98e9ad95e1313e4ad5213194587ede87f037e7c08a64c5dddd631436c72e5cdf4e7f643fcf0ffc0a7046490f0a45786cc143048ac3a2b"
 
 [update]
-[update.curseforge]
-file-id = 5982781
-project-id = 889722
+[update.modrinth]
+mod-id = "Jdbbtt0i"
+version = "TYxoB2MX"

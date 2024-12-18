@@ -3,11 +3,11 @@ filename = "createbigcannons-5.7.1-mc.1.20.1-fabric.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "446f6e14b6fafdfad7f6b2f2de30a10552f93099"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/GWp4jCJj/versions/C26LAWHn/createbigcannons-5.7.1-mc.1.20.1-fabric.jar"
+hash-format = "sha512"
+hash = "a6ff601d083fd46b7e2a56e127d081d1d1e5fc94cb9ec4d6dab6b9f94b2bcd846404cbe11566085c7999f982e2e8a18e5e35cd810c21366e2e23353f5148a9d1"
 
 [update]
-[update.curseforge]
-file-id = 5994229
-project-id = 646668
+[update.modrinth]
+mod-id = "GWp4jCJj"
+version = "C26LAWHn"

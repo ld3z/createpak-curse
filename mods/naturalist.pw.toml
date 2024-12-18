@@ -3,11 +3,11 @@ filename = "naturalist-fabric-4.0.3-1.20.1.jar"
 side = "both"
 
 [download]
-hash-format = "sha1"
-hash = "309142b01014a047cf8cbdded96b085ca59fac85"
-mode = "metadata:curseforge"
+url = "https://cdn.modrinth.com/data/F8BQNPWX/versions/dMGBsRgz/naturalist-fabric-4.0.3-1.20.1.jar"
+hash-format = "sha512"
+hash = "2598c35680c48d8a5a30c05883cf1c0b3cbada36594ba93f35f3e99555634e64d3b4eea5d1c8beb84ef7019d3d61a32350cdc68368ab0a2b731ab381978492b0"
 
 [update]
-[update.curseforge]
-file-id = 4847007
-project-id = 627986
+[update.modrinth]
+mod-id = "F8BQNPWX"
+version = "dMGBsRgz"
