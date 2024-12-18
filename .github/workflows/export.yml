@@ -49,7 +49,7 @@ jobs:
       - name: Debug Packwiz Cache
         run: |
           echo "Packwiz Cache Files:"
-          ls -alh /home/runner/.cache/packwiz/cache/
+          ls -alh /home/runner/.cache/packwiz/cache/import
 
       - name: Run Packwiz Refresh
         run: |
