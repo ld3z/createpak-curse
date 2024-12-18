@@ -21,6 +21,9 @@ jobs:
           # Extract the zip file
           unzip packwiz.zip -d packwiz
 
+          # Create the .local/bin directory if it doesn't exist
+          mkdir -p ~/.local/bin
+
           # Move the binary to the system path
           mv packwiz/packwiz ~/.local/bin/packwiz
           
