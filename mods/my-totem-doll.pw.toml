@@ -1,0 +1,13 @@
+name = "My Totem Doll"
+filename = "My Totem Doll-1.0.1+1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "878b55f9d9cf1f3885cb81dadbf10f83022edaa4"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5554654
+project-id = 1065783
