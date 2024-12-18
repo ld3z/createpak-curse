@@ -126,6 +126,11 @@ hash = "e11870c3d508d66b49a6f712a72f1adf2ac552de411c86877bcb4332c935f962"
 metafile = true
 
 [[files]]
+file = "mods/enchanting-infuser-forge.pw.toml"
+hash = "1c3f9303727ad05b34a7e239f5e9c86121de3dddd7402c19b3ef209b56ac56ef"
+metafile = true
+
+[[files]]
 file = "mods/enhanced-block-entities.pw.toml"
 hash = "de33a63b6e7182dc3229d77c95c118cdc2ad64321ae4fc16d16a23a3b34e746b"
 metafile = true
