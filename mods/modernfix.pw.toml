@@ -1,0 +1,13 @@
+name = "ModernFix"
+filename = "modernfix-fabric-5.19.7+mc1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5ea5b4427ff8361145de1068759044b8363dd784"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5986633
+project-id = 790626

@@ -116,6 +116,11 @@ hash = "0754e7e9d9ebcd6118d3dbe98ae9e4ecdb53f938d16370971a2a01b8ef49e2ad"
 metafile = true
 
 [[files]]
+file = "mods/dynamic-fps.pw.toml"
+hash = "876de3cd813af6dc432a008f30a8356eed1a57bc43b90dbd84b7336637b1ae81"
+metafile = true
+
+[[files]]
 file = "mods/easy-magic.pw.toml"
 hash = "e11870c3d508d66b49a6f712a72f1adf2ac552de411c86877bcb4332c935f962"
 metafile = true
@@ -136,6 +141,11 @@ hash = "8f6edf8b6066bc65daaeecb7fc995fa6b4e014f92d53c10260963570d9e0243b"
 metafile = true
 
 [[files]]
+file = "mods/entityculling.pw.toml"
+hash = "0feec1e2f9e4792552a7c2c9388da011763122b1fb2100321a7e9d9585d7237e"
+metafile = true
+
+[[files]]
 file = "mods/fabric-api.pw.toml"
 hash = "8de441dd57379d434805fb87722233fa39e346a9152828e7ff49b0ed9b2bd518"
 metafile = true
@@ -146,8 +156,18 @@ hash = "070f3b65efd84e7d28e84d819e94f1d886ebb9df0d2c8e2e5acc168966a34f67"
 metafile = true
 
 [[files]]
+file = "mods/fakerlib.pw.toml"
+hash = "bd7919bae1113226ed3b919209adc2140e7d2433a707965e0312a70ba09c7d45"
+metafile = true
+
+[[files]]
 file = "mods/farmers-delight-refabricated.pw.toml"
 hash = "f3585706ab74e5551376ef97b0f17cc19a0ae192dbeb62649bc78ef3edf830e7"
+metafile = true
+
+[[files]]
+file = "mods/ferritecore-fabric.pw.toml"
+hash = "28f53f38c111e3d6aa7f6854fa976a1456f4094dc504a929a6d4bf1f9f8cc30a"
 metafile = true
 
 [[files]]
@@ -221,6 +241,11 @@ hash = "aa9d8515513ef8d68d18a716b60fac155ee2d2d927e04abf531c6a487315f30d"
 metafile = true
 
 [[files]]
+file = "mods/modernfix.pw.toml"
+hash = "9d3efa99729c1fc119636c4d3328abbe60898f8b575ed44fef31848c91b1b718"
+metafile = true
+
+[[files]]
 file = "mods/modmenu.pw.toml"
 hash = "66d1b7bc973830475a7bae8a5b823ec42fbc1ed1f4d4c514f1e6a21b20177810"
 metafile = true
@@ -258,6 +283,11 @@ metafile = true
 [[files]]
 file = "mods/numismatics.pw.toml"
 hash = "18a4f4dfc2a16aadfe282c53c15df1015c35650ebe70df184843fe5cc02f31f5"
+metafile = true
+
+[[files]]
+file = "mods/patchouli-fabric.pw.toml"
+hash = "bb0398103eccb3b7bb136776e68e7eda242c25d4d9864d4551d18beca58bc913"
 metafile = true
 
 [[files]]
@@ -363,4 +393,14 @@ metafile = true
 [[files]]
 file = "mods/yungs-better-nether-fortresses-fabric.pw.toml"
 hash = "c813b4aaebbdec8b97874334333fcb2fe606ad6473fe44f2cc48c6f74df12393"
+metafile = true
+
+[[files]]
+file = "mods/zenith-attributes.pw.toml"
+hash = "c8a64bbc658d7fbbf6d537b4d4f76d163bb6b3f92e34003b8f4fbe95fee6d940"
+metafile = true
+
+[[files]]
+file = "mods/zenith.pw.toml"
+hash = "edcdc9b81f02a8523a4b52709b36a050b0444d7c3710fe553075bedc6d7eafad"
 metafile = true

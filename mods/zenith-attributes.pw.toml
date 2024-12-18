@@ -1,0 +1,13 @@
+name = "Zenith Attributes"
+filename = "zenith_attributes-0.2.9.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cb82d5a9700a606d1140abede07f9fa92d7db88f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5918684
+project-id = 910078
