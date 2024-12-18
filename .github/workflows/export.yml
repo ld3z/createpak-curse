@@ -25,7 +25,8 @@ jobs:
           # Make the packwiz binary executable
           chmod +x packwiz/packwiz
           
-          # Move the binary to a directory included in the PATH (e.g., $HOME/.local/bin)
+          # Create the directory if it doesn't exist and move the binary to it
+          mkdir -p $HOME/.local/bin
           mv packwiz/packwiz $HOME/.local/bin/
           
           # Add the directory to the PATH for the current session
