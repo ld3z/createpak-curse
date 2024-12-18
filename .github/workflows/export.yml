@@ -31,7 +31,7 @@ jobs:
           # Download each mod from CurseForge and place it in the import directory
           wget -O /home/runner/.cache/packwiz/cache/import/sodium-fabric-0.5.11+mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/sodium/files/5485654
           wget -O /home/runner/.cache/packwiz/cache/import/create_dd-0.1d.jar https://www.curseforge.com/minecraft/mc-mods/create-dreams-desires/files/5303207
-          wget -O /home/runner/.cache/packwiz/cache/import/My Totem Doll-1.0.1+1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/my-totem-doll/files/5554654
+          wget -O /home/runner/.cache/packwiz/cache/import/My_Totem _Doll-1.0.1+1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/my-totem-doll/files/5554654
           wget -O /home/runner/.cache/packwiz/cache/import/skinlayers3d-fabric-1.7.4-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/skin-layers-3d/files/5970918
           wget -O /home/runner/.cache/packwiz/cache/import/entityculling-fabric-1.7.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/entityculling/files/5968678
           wget -O /home/runner/.cache/packwiz/cache/import/notenoughanimations-fabric-1.8.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/not-enough-animations/files/5977993
