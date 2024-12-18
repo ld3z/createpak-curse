@@ -1,6 +1,14 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/enchantinginfuser-server.toml"
+hash = "36328d1f680436ad710da8f04bd0121596ab7dec987abf513e9fafe353e5619b"
+
+[[files]]
+file = "config/zenith/enchantments.cfg"
+hash = "af8ca54df39d379e0dab2537e73ee0606ac90f184abde8cacdc7d41250be5179"
+
+[[files]]
 file = "mods/amendments.pw.toml"
 hash = "330f559f4dcab6e0e60a9e5022d254d365b99dc9297e4eaa66b1055a7ca4a343"
 metafile = true
