@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Go (1.19+)
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version: '1.19'
 
@@ -28,7 +28,6 @@ jobs:
 
       - name: Download manually required mods using wget
         run: |
-          # Download each mod from CurseForge and place it in the import directory
           wget -O /home/runner/.cache/packwiz/cache/import/sodium-fabric-0.5.11+mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/sodium/files/5485654
           wget -O /home/runner/.cache/packwiz/cache/import/create_dd-0.1d.jar https://www.curseforge.com/minecraft/mc-mods/create-dreams-desires/files/5303207
           wget -O /home/runner/.cache/packwiz/cache/import/My_Totem_Doll-1.0.1+1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/my-totem-doll/files/5554654
@@ -36,18 +35,14 @@ jobs:
           wget -O /home/runner/.cache/packwiz/cache/import/entityculling-fabric-1.7.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/entityculling/files/5968678
           wget -O /home/runner/.cache/packwiz/cache/import/notenoughanimations-fabric-1.8.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/not-enough-animations/files/5977993
 
-      - name: Rename Totem file
+      - name: Debug Packwiz Cache
         run: |
-          mv "/home/runner/.cache/packwiz/cache/import/My_Totem_Doll-1.0.1+1.20.1.jar" "/home/runner/.cache/packwiz/cache/import/My Totem Doll-1.0.1+1.20.1.jar"
+          echo "Packwiz Cache Files:"
+          ls -alh /home/runner/.cache/packwiz/cache/
 
-      - name: List files in cache folder
+      - name: Run Packwiz Refresh
         run: |
-          echo "Files in cache directory:"
-          ls -alh /home/runner/.cache/packwiz/cache/import
-
-      - name: Run Packwiz export (curseforge)
-        run: |
-          packwiz curseforge export
+          packwiz refresh
 
       - name: Run Packwiz export (modrinth)
         run: |
