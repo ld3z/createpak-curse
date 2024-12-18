@@ -13,15 +13,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Go (1.19+)
-        uses: actions/setup-go@v3
-        with:
-          go-version: '1.19'  # Ensure you use Go 1.19 or newer
-
-      - name: Install Packwiz via Go
+      - name: Download and install Packwiz nightly build
         run: |
-          go install github.com/packwiz/packwiz@latest
-          # Ensure that the packwiz binary is in your PATH
+          # Download the latest nightly build as a ZIP file
+          NIGHTLY_URL="https://nightly.link/packwiz/packwiz/workflows/go/main/Linux%2064-bit%20x86.zip"
+          curl -L $NIGHTLY_URL -o packwiz-nightly.zip
+          
+          # Unzip the downloaded file
+          unzip packwiz-nightly.zip -d packwiz
+          
+          # Make the packwiz binary executable and move it to the $GOPATH/bin directory
+          chmod +x packwiz/packwiz
+          mv packwiz/packwiz $GOPATH/bin/
+          
+          # Add the Go binary path to the system PATH
           echo "$GOPATH/bin" >> $GITHUB_PATH
 
       - name: Run Packwiz export
