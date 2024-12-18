@@ -28,7 +28,6 @@ jobs:
         run: |
           # The modpack is located at the root of the repository, no need to change the directory
           packwiz curseforge export
-          packwiz modrinth export
 
       - name: List files after export
         run: ls -alh  # Check if the ZIP file exists
