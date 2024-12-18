@@ -32,6 +32,11 @@ jobs:
           # Add the directory to the PATH for the current session
           echo "$HOME/.local/bin" >> $GITHUB_PATH
 
+      - name: Remove the nightly ZIP from the export directory
+        run: |
+          # Remove the nightly ZIP file if it exists in the directory to ensure it is not included in the export
+          rm -f packwiz-nightly.zip
+
       - name: Run Packwiz export
         run: |
           # The modpack is located at the root of the repository, no need to change the directory
