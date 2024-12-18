@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # You can change to windows-latest if needed
+    runs-on: ubuntu-latest  # Change to windows-latest if needed
     
     steps:
       - name: Checkout repository
@@ -16,26 +16,36 @@ jobs:
       - name: Set up Go (1.19+)
         uses: actions/setup-go@v3
         with:
-          go-version: '1.19'  # Ensure you use Go 1.19 or newer
+          go-version: '1.19'
 
       - name: Install Packwiz via Go
         run: |
           go install github.com/packwiz/packwiz@latest
-          # Ensure that the packwiz binary is in your PATH
           echo "$GOPATH/bin" >> $GITHUB_PATH
+
+      - name: Create cache directory
+        run: mkdir -p /home/runner/.cache/packwiz/cache/import
+
+      - name: Download manually required mods
+        run: |
+          # Download each mod from CurseForge and place it in the import directory
+          curl -L -o /home/runner/.cache/packwiz/cache/import/sodium-fabric-0.5.11+mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/sodium/files/5485654
+          curl -L -o /home/runner/.cache/packwiz/cache/import/create_dd-0.1d.jar https://www.curseforge.com/minecraft/mc-mods/create-dreams-desires/files/5303207
+          curl -L -o /home/runner/.cache/packwiz/cache/import/My_Totem_Doll-1.0.1+1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/my-totem-doll/files/5554654
+          curl -L -o /home/runner/.cache/packwiz/cache/import/skinlayers3d-fabric-1.7.4-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/skin-layers-3d/files/5970918
+          curl -L -o /home/runner/.cache/packwiz/cache/import/entityculling-fabric-1.7.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/entityculling/files/5968678
+          curl -L -o /home/runner/.cache/packwiz/cache/import/notenoughanimations-fabric-1.8.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/not-enough-animations/files/5977993
 
       - name: Run Packwiz export (curseforge)
         run: |
-          # The modpack is located at the root of the repository, no need to change the directory
           packwiz curseforge export
 
       - name: Run Packwiz export (modrinth)
         run: |
-          # The modpack is located at the root of the repository, no need to change the directory
           packwiz modrinth export
 
       - name: List files after export
-        run: ls -alh  # Check if the ZIP file exists
+        run: ls -alh
 
       - name: Create a new tag
         id: create_tag
@@ -44,7 +54,7 @@ jobs:
           TAG_NAME="v${COMMIT_HASH}"
           git tag $TAG_NAME
           git push origin $TAG_NAME
-          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV  # Store the tag in the environment for later steps
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
 
       - name: Create GitHub Release and Upload Files
         uses: softprops/action-gh-release@v2
@@ -52,6 +62,6 @@ jobs:
           files: |
             ${{ github.workspace }}/*.zip
             ${{ github.workspace }}/*.mrpack
-          tag_name: ${{ env.TAG_NAME }}  # Use the tag name from the environment variable
+          tag_name: ${{ env.TAG_NAME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
