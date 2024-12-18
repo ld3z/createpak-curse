@@ -22,12 +22,14 @@ jobs:
           # Unzip the downloaded file
           unzip packwiz-nightly.zip -d packwiz
           
-          # Make the packwiz binary executable and move it to the $GOPATH/bin directory
+          # Make the packwiz binary executable
           chmod +x packwiz/packwiz
-          mv packwiz/packwiz $GOPATH/bin/
           
-          # Add the Go binary path to the system PATH
-          echo "$GOPATH/bin" >> $GITHUB_PATH
+          # Move the binary to a directory included in the PATH (e.g., $HOME/.local/bin)
+          mv packwiz/packwiz $HOME/.local/bin/
+          
+          # Add the directory to the PATH for the current session
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Run Packwiz export
         run: |
