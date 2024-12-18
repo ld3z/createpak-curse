@@ -1,12 +1,12 @@
 name = "createpak"
 author = "ldez"
-version = "1.2.1"
+version = "1.2.0"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "01c33da645854b74b3ef2d6aa1236e04fd58a33807515cc15ae020cb1d8cbdbe"
+hash = "04446d488c73976708e70128bf2c62ab0561b71c3b0dfb5c27521c05333ab9d8"
 
 [versions]
 fabric = "0.16.9"

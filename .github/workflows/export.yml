@@ -7,60 +7,30 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Change to windows-latest if needed
+    runs-on: ubuntu-latest  # You can change to windows-latest if needed
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Packwiz from Nightly Build
+      - name: Set up Go (1.19+)
+        uses: actions/setup-go@v3
+        with:
+          go-version: '1.19'  # Ensure you use Go 1.19 or newer
+
+      - name: Install Packwiz via Go
         run: |
-          # Download the Packwiz nightly zip file for Linux 64-bit
-          wget https://nightly.link/packwiz/packwiz/workflows/go/main/Linux%2064-bit%20x86.zip -O packwiz.zip
-          
-          # Extract the zip file
-          unzip packwiz.zip -d packwiz
+          go install github.com/packwiz/packwiz@latest
+          # Ensure that the packwiz binary is in your PATH
+          echo "$GOPATH/bin" >> $GITHUB_PATH
 
-          # Create the .local/bin directory if it doesn't exist
-          mkdir -p ~/.local/bin
-
-          # Move the binary to the system path
-          mv packwiz/packwiz ~/.local/bin/packwiz
-          
-          # Ensure the binary is in the PATH
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-
-      - name: Create cache directory
-        run: mkdir -p /home/runner/.cache/packwiz/cache/import
-
-      - name: Download manually required mods using wget
+      - name: Run Packwiz export
         run: |
-          wget -O /home/runner/.cache/packwiz/cache/import/sodium-fabric-0.5.11+mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/sodium/files/5485654
-          wget -O /home/runner/.cache/packwiz/cache/import/create_dd-0.1d.jar https://www.curseforge.com/minecraft/mc-mods/create-dreams-desires/files/5303207
-          wget -O /home/runner/.cache/packwiz/cache/import/My_Totem_Doll-1.0.1+1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/my-totem-doll/files/5554654
-          wget -O /home/runner/.cache/packwiz/cache/import/skinlayers3d-fabric-1.7.4-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/skin-layers-3d/files/5970918
-          wget -O /home/runner/.cache/packwiz/cache/import/entityculling-fabric-1.7.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/entityculling/files/5968678
-          wget -O /home/runner/.cache/packwiz/cache/import/notenoughanimations-fabric-1.8.2-mc1.20.1.jar https://www.curseforge.com/minecraft/mc-mods/not-enough-animations/files/5977993
-
-      - name: Rename My_Totem_Doll Jar File
-        run: |
-          mv /home/runner/.cache/packwiz/cache/import/My_Totem_Doll-1.0.1+1.20.1.jar /home/runner/.cache/packwiz/cache/import/My\ Totem\ Doll-1.0.1+1.20.1.jar
-
-      - name: Debug Packwiz Cache
-        run: |
-          echo "Packwiz Cache Files:"
-          ls -alh /home/runner/.cache/packwiz/cache/import
-
-      - name: Run Packwiz Refresh
-        run: |
-          packwiz refresh
-
-      - name: Run Packwiz export (modrinth)
-        run: |
-          packwiz modrinth export
+          # The modpack is located at the root of the repository, no need to change the directory
+          packwiz curseforge export
 
       - name: List files after export
-        run: ls -alh
+        run: ls -alh  # Check if the ZIP file exists
 
       - name: Create a new tag
         id: create_tag
@@ -69,14 +39,12 @@ jobs:
           TAG_NAME="v${COMMIT_HASH}"
           git tag $TAG_NAME
           git push origin $TAG_NAME
-          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV  # Store the tag in the environment for later steps
 
-      - name: Create GitHub Release and Upload Files
+      - name: Create GitHub Release and Upload ZIP
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            ${{ github.workspace }}/*.zip
-            ${{ github.workspace }}/*.mrpack
-          tag_name: ${{ env.TAG_NAME }}
+          files: ${{ github.workspace }}/*.zip
+          tag_name: ${{ env.TAG_NAME }}  # Use the tag name from the environment variable
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
