@@ -1,0 +1,13 @@
+name = "Enchanting Infuser"
+filename = "EnchantingInfuser-v8.0.3-1.20.1-Fabric.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/ePv85y52/versions/8ZYi5jjW/EnchantingInfuser-v8.0.3-1.20.1-Fabric.jar"
+hash-format = "sha512"
+hash = "7e6583ad50c9b0fa6dfd0502a7cda32bf0006ce1e18fad567189c44dc5b99ecd15f5000ef337e47a77777d875229570842bf63d177a4fb2289dd416a5f20b5b9"
+
+[update]
+[update.modrinth]
+mod-id = "ePv85y52"
+version = "8ZYi5jjW"

@@ -1,0 +1,13 @@
+name = "Zenith Attributes"
+filename = "zenith_attributes-0.2.9.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/9sxDq6mj/versions/gv1RcAyT/zenith_attributes-0.2.9.jar"
+hash-format = "sha512"
+hash = "30778277a0b5703f350e3742f083812bec0a0f0d71d1034162375556c60334e9dc0cc03e5d99c1680739c1e371cbaf64a00b8a130a6eba211f115be61f2d164b"
+
+[update]
+[update.modrinth]
+mod-id = "9sxDq6mj"
+version = "gv1RcAyT"

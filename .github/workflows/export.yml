@@ -37,13 +37,20 @@ jobs:
           # Remove the nightly ZIP file if it exists in the directory to ensure it is not included in the export
           rm -f packwiz-nightly.zip
 
-      - name: Run Packwiz export
+      - name: Run Packwiz export for CurseForge
         run: |
-          # The modpack is located at the root of the repository, no need to change the directory
+          # Navigate to the curseforge directory and run the export command
+          cd curseforge
           packwiz curseforge export
 
+      - name: Run Packwiz export for Modrinth
+        run: |
+          # Navigate to the modrinth directory and run the export command
+          cd modrinth
+          packwiz modrinth export
+
       - name: List files after export
-        run: ls -alh  # Check if the ZIP file exists
+        run: ls -alh  # Check if the ZIP files exist in the respective directories
 
       - name: Create a new tag
         id: create_tag
@@ -54,10 +61,18 @@ jobs:
           git push origin $TAG_NAME
           echo "TAG_NAME=$TAG_NAME" >> $GITHUB_ENV  # Store the tag in the environment for later steps
 
-      - name: Create GitHub Release and Upload ZIP
+      - name: Create GitHub Release and Upload ZIP for CurseForge
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ github.workspace }}/*.zip
+          files: ${{ github.workspace }}/curseforge/*.zip  # Adjust path for CurseForge ZIP file
+          tag_name: ${{ env.TAG_NAME }}  # Use the tag name from the environment variable
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create GitHub Release and Upload ZIP for Modrinth
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ github.workspace }}/modrinth/*.mrpack  # Adjust path for Modrinth ZIP file
           tag_name: ${{ env.TAG_NAME }}  # Use the tag name from the environment variable
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
